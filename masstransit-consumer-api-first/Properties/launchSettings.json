@@ -7,7 +7,9 @@
       "launchUrl": "weatherforecast",
       "applicationUrl": "http://localhost:5000",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "MONGODB_CONNECTION_STRING": "mongodb+srv://abrandaol:GY8zEDTgGTEBf2I9@livre.d7nw4.mongodb.net/Store?retryWrites=true&w=majority",
+        "MONGODB_DATABASE_NAME": "Store"
       }
     }
   }

@@ -24,11 +24,11 @@ namespace masstransit_consumer_api_first.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] long orderId)
+        public async Task<IActionResult> Post([FromBody] Order order)
         {
-            await _bus.Publish<Order>(new Order { OrderId = orderId });
+            await _bus.Publish(order);
 
-            _logger.LogInformation($"Message received. OrderId: {orderId}");
+            _logger.LogInformation($"Message received. OrderId: {order.OrderId}");
 
             return Ok($"{DateTime.Now:o}");
         }

@@ -6,6 +6,7 @@ using GreenPipes;
 using MassTransit;
 using MassTransit.RabbitMqTransport;
 using masstransit_consumer_api_first.Consumer;
+using masstransit_consumer_api_first.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -28,6 +29,8 @@ namespace masstransit_consumer_api_first
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddSingleton<IOrderRepository, OrderRepository>();
 
             services.AddMassTransit(cfg =>
             {
